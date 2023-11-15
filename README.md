@@ -1,11 +1,15 @@
-# SPL Projects template
+# Open Cosmos <img src="./assets/logos/open_cosmos_logo.png" width="20" height="20">
+Aim High, Go Beyond
 
-**Note**: Delete this in your project repository and add details concerned to your project.
+## Data Engineering Challenge
+This repository consists of the scripts developed for the data engineering challenge presented by Open Cosmos Ltd.
 
-## Guidelines
+### Instructions
 
-This is a template for other projects to follow. It has two main folders, `src` and `tests`. Please place all the source code of your project in the `src` folder, and write any test functions to test the code in the `tests` folder.
+If you have the [Copernicus Data Hub](https://dataspace.copernicus.eu/) account, please create a new OAuth client in your user dash board, and add client 'ID' and client 'SECRET' to the `.env` variables below. For instructions, please click [here](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
 
-__Note__:Rename `src` with a unique name if you are working with multiple repos in a single project.
+```
+$ export SH_CLIENT_ID=xxxxxxxxxx
+$ export SH_CLIENT_SECRET=xxxxxxxx
+``` 
 
-Opening Issues are encouraged in any of the projects as well as pull requests (PRs). Regarding both, please add clear descriptions of the issues and PRs for the developers to understand the issue at hand.
