@@ -4,3 +4,4 @@ colorlog
 requests
 tqdm
 click
+sentinelhub
