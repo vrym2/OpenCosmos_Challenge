@@ -13,3 +13,5 @@ dependencies:
   - pytest
   - click
   - sentinelhub
+  - pip:
+    - python-dotenv
