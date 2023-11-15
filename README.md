@@ -1,4 +1,4 @@
-# Open Cosmos <img src="./assets/logos/open_cosmos_logo.png" width="30" height="30">
+# [Open Cosmos](https://www.open-cosmos.com/) <img src="./assets/logos/open_cosmos_logo.png" width="30" height="30">
 Aim High, Go Beyond
 
 ## Data Engineering Challenge
