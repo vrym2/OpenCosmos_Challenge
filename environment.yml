@@ -1,0 +1,14 @@
+name: project_env
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - tqdm
+  - colorlog
+  - requests
+  - pre-commit
+  - pytest
+  - click
