@@ -1,4 +1,4 @@
-name: project_env
+name: opencosmos
 channels:
   - anaconda
   - conda-forge
