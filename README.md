@@ -13,3 +13,11 @@ $ export SH_CLIENT_ID=xxxxxxxxxx
 $ export SH_CLIENT_SECRET=xxxxxxxx
 ``` 
 
+Install the `environment.yml` or `requirements.txt` in your virtual environment.
+```
+$ conda env create -f environment.yml # or
+$ source activate venv
+$ pip install -r requirements.txt
+```
+
+### Usage
