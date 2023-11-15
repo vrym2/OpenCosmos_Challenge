@@ -6,7 +6,7 @@ This repository consists of the scripts developed for the data engineering chall
 
 ### Instructions
 
-If you have the [Copernicus Data Hub](https://dataspace.copernicus.eu/) account, please create a new OAuth client in your user dash board, and add client 'ID' and client 'SECRET' to the `.env` variables below. For instructions, please click [here](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
+If you have the [Sentinel Hub](https://apps.sentinel-hub.com/dashboard/#/) account, please create a new OAuth client in your user dash board, and add client 'ID' and client 'SECRET' to the `.env` variables below. For instructions, please click [here](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
 
 ```
 $ export SH_CLIENT_ID=xxxxxxxxxx
