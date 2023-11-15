@@ -10,12 +10,12 @@ long_description = (this_directory / "README.md").read_text()
 install_requires = (this_directory / "requirements.txt").read_text().splitlines()
 
 setup(
-    name="SPL_project",
+    name="Open Cosmos Data Engineering Challenge",
     version="0.0.1",
-    description="Your repository",
-    author="Your name",
-    author_email="kjt7@leicester.ac.uk",
-    company="Space Park Leicester",
+    description="Repository with scripts for data engineering challenge",
+    author="Vardhan Raj Modi",
+    author_email="vardhan609@gmail.com",
+    company="Open Cosmos",
     install_requires=install_requires,
     long_description=long_description,
     long_description_content_type="text/markdown",
