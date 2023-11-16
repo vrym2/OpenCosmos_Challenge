@@ -1,5 +1,5 @@
 # [Open Cosmos](https://www.open-cosmos.com/) <img src="./assets/logos/open_cosmos_logo.png" width="30" height="30">
-✨ Aim High, Go Beyond! ✨
+Aim High, Go Beyond! 🌍
 
 ## Data Engineering Challenge
 This repository consists of the scripts developed for the data engineering challenge presented by Open Cosmos Ltd.
@@ -31,3 +31,16 @@ $ export SH_CLIENT_SECRET=xxxxxxxx
 ```
 $ python opencosmos/sh/s2_download.py
 ```
+
+## ✨ Thank you Open Cosmos for the challenge ✨
+
+Contributors of this work 👷 
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://www.open-cosmos.com/"><img src="https://media.licdn.com/dms/image/C560BAQEyGxkRca65Wg/company-logo_200_200/0/1630649632519/opencosmos_logo?e=1707955200&v=beta&t=NEu63PndobhMvC2JedcX1uVUTz9bxThWsKQqtJioyZo" width="100px;" alt=""/><br /><sub><b>Ground segment Team</b></sub></a><br /><a href="#projectManagement-OC" title="Project Management">📆</a></td>
+      <td align="center"><a href="https://github.com/vrym2"><img src="https://avatars.githubusercontent.com/u/93340339?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raj</b></sub></a><br /><a href="https://github.com/SpaceParkLeicester/Planet/commits?author=vrym2" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>     
