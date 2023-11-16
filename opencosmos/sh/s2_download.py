@@ -101,7 +101,7 @@ class sentinel2_image:
         mime_type, eval_script = self.sh_request_config(download_file_type, eval_script)
 
         # Create the folder to download
-        download_folder = os.path.join("data", "sentinel", f"{download_file_type}")
+        download_folder = os.path.join("data", f"{download_file_type}")
         if not os.path.exists(download_folder):
             os.makedirs(download_folder)
         
@@ -110,7 +110,7 @@ class sentinel2_image:
         if not self.sh_config.sh_client_id or not self.sh_config.sh_client_secret:
             self.log.debug("Warning! To use Process API, please provide the credentials (OAuth client ID and client secret).")
         else:
-            loading = Loader("Downloading the True color Mosaic...", "Well, That was fast", 0.05).start()
+            loading = Loader(f"Downloading the {download_file_type.upper()} True color Mosaic...", "Well, That was fast", 0.05).start()
             request_true_color = SentinelHubRequest(
                 data_folder = download_folder,
                 evalscript = eval_script,
@@ -134,20 +134,21 @@ class sentinel2_image:
                     self.log.info(f"{os.path.join(folder, filename)}")
 
 @click.command()
-@click.option("--coords_wgs84", type = str, default= "-0.18,51.46,-0.03,51.53", help = "WGS84 bbox coords, separated by a comma")
+@click.option("--coords_wgs84", type = str, default= "-0.18,51.46,-0.03,51.53", help = "WGS84 bbox coords, separated by a comma") # London coordinates
+@click.option("--resolution", type = np.int16, default = 10, help = "Resolution of the downloading bounding box image")
 @click.option("--time_interval", type = str, default = "2020-06-01, 2020-06-30", help = "Enter the time interval separated by a comma")
-@click.option("--file_type", type = str, default = "tiff", help = "Type of the sentinel 2 image, PNG or TIFF")
-@click.option("--eval_script", type = str, default = "true_color", help = "Typeof the evaluation scripts used")
-def main(coords_wgs84, time_interval, file_type, eval_script):
+def main(coords_wgs84, time_interval, resolution):
     coords = [float(x) for x in coords_wgs84.split(',')]
     interval = [interval for interval in time_interval.split(',')]
     
-    image = sentinel2_image(log = logging)
-    bbox, _ = image.aoi(coords_wgs84 = coords)
-    image.download(
-        time_interval = interval,
-        download_file_type = file_type,
-        eval_script = eval_script)
+    for file_type,_ in sentinel2_image.mime_type.items():
+
+        image = sentinel2_image(log = logging)
+        image.aoi(coords_wgs84 = coords, resolution = resolution)
+        image.download(
+            time_interval = interval,
+            download_file_type = file_type,
+            eval_script = "true_color")
 
 
 
