@@ -29,5 +29,5 @@ $ export SH_CLIENT_SECRET=xxxxxxxx
 
 1. To download the a sentinel 2 image, run the following command.
 ```
-$ python opencosmos/sentinel/s2_download.py
+$ python opencosmos/sh/s2_download.py
 ```
