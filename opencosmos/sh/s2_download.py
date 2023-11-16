@@ -14,7 +14,7 @@ from sentinelhub import (
     DataCollection,
     MimeType,
     MosaickingOrder)
-from opencosmos.sentinel import sentinelhub_eval_scripts, sentinelhub_config
+from opencosmos.sh import sentinelhub_eval_scripts, sentinelhub_config
 from opencosmos.utils import Loader
 from sentinelhub.geometry import BBox
 import logging
