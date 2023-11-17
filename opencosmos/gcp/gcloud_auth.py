@@ -1,3 +1,7 @@
+"""
+    Google Cloud Authentication
+"""
+
 import click
 from google.cloud import storage
 from google.api_core.exceptions import BadRequest
