@@ -5,8 +5,11 @@ Aim High, Go Beyond! 🌍
 This repository consists of the scripts developed for the data engineering challenge presented by Open Cosmos Ltd.
 
 ### Instructions
-1. Make sure you have Google Cloud Storage API enabled for this Google Cloud project. Please click [here](docs/google_cloud.md) for the instructions
+
+1. Make sure you have Google Cloud Storage API enabled for this Google Cloud project. Please click [here](docs/google_cloud.md) for the instructions.
+
 2. Install the `environment.yml` or `requirements.txt` in your virtual environment.
+
 ```
 $ conda env create -f environment.yml # or
 $ source activate venv
@@ -14,6 +17,7 @@ $ pip install -r requirements.txt
 ```
 
 3. Run the below command to crate the `SentinelHub` configuration file.
+
 ```
 $ sentinelhub.config --show
 ```
@@ -27,10 +31,30 @@ $ export SH_CLIENT_SECRET=xxxxxxxx
 
 ### Usage
 
-1. To download the a sentinel 2 image, run the following command.
+1. To download the a sentinel 2 true-color COG (Cloud Optimised GeoTIFF) data, run the following command. All the workflow scripts have CLI interface, so if you'd like to understand the input arguments, add the tag `--help` at the end of the command.
+
+Input arguments:
+
+  - coords_wgs84
+    - You can get required bounding box coordinates (WGS84) with [bbox finder](http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000) website. 
+
+  - resolution
+    - Desired resolution (10m, 20m, 60m), if the given bounding box extends to multiple Kms, use lower resolutions (60m) to avoid errors.
+
+  - time_interval
+    - Time range expressed in YYYY-MM-DD, YYYY-MM-DD format.
+
 ```
-$ python opencosmos/sh/s2_download.py
+$ python opencosmos/sh/s2_download.py --help
 ```
+
+2. To get the overview of an image in `webp` format, with the size not greater than 500kb and shape 500 x 500 px, run the following command.
+
+```
+$ python opencosmos/utils/img_format.py
+```
+
+3. Upload the files
 
 ## ✨ Thank you Open Cosmos for the challenge ✨
 
