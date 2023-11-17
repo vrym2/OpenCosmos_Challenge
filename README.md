@@ -88,7 +88,7 @@ Input Arguments:
   - project_id:
     - project ID that has been set.
   
-  -local_filepath:
+  - local_filepath:
     - Relative path to the file that needs uploading.
 
   - bucket_path:
