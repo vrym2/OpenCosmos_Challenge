@@ -29,6 +29,10 @@ $ export SH_CLIENT_ID=xxxxxxxxxx
 $ export SH_CLIENT_SECRET=xxxxxxxx
 ``` 
 
+## Usage
+
+Please click [here](docs/usage_instructions.md) to go the usage instructions.
+
 ## ✨ Thank you Open Cosmos for the challenge ✨
 
 Contributors of this work 👷 
