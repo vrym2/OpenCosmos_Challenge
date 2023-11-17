@@ -4,6 +4,8 @@ __Note__: Information regarding Google cloud services.
 
 * Install [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)(click the link for instructions) on you machine, to utilise Google Cloud Services via CLI.
 
+* Install [Google Cloud Storage](https://cloud.google.com/storage/docs/gsutil_install) on your machine, to use cloud storage commands via CLI.
+
 * Create a new project on the platform or, set a project as default in you current machine.
 ```
 $ gcloud projects create PROJECT_ID # To create a project
