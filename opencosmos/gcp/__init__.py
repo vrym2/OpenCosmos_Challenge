@@ -1,2 +1,2 @@
 """Import libraries"""
-from .auth import gcloud_auth
+from .gcloud_auth import Google_Cloud_Authentication
