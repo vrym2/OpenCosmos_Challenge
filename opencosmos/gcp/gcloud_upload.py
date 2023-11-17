@@ -77,6 +77,7 @@ class Google_Cloud_Storage:
 def main(project_id, local_filepath, bucket_path):
     """Uploading a file to the storage"""
     gcloud = Google_Cloud_Storage(
+        log = logging,
         project_id = project_id,
         local_filepath = local_filepath,
         bucket_path = bucket_path)
