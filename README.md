@@ -5,20 +5,20 @@ Aim High, Go Beyond! 🌍
 This repository consists of the scripts developed for the data engineering challenge presented by Open Cosmos Ltd.
 
 ### Instructions
-
-1. Install the `environment.yml` or `requirements.txt` in your virtual environment.
+1. Make sure you have Google Cloud Storage API enabled for this Google Cloud project. Please click [here](docs/google_cloud.md) for the instructions
+2. Install the `environment.yml` or `requirements.txt` in your virtual environment.
 ```
 $ conda env create -f environment.yml # or
 $ source activate venv
 $ pip install -r requirements.txt
 ```
 
-2. Run the below command to crate the `SentinelHub` configuration file.
+3. Run the below command to crate the `SentinelHub` configuration file.
 ```
 $ sentinelhub.config --show
 ```
 
-3. If you have the [Sentinel Hub](https://apps.sentinel-hub.com/dashboard/#/) account, please create a new OAuth client in your user dash board, and add client 'ID' and client 'SECRET' to the `.env` variables below. For instructions, please click [here](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
+4. If you have the [Sentinel Hub](https://apps.sentinel-hub.com/dashboard/#/) account, please create a new OAuth client in your user dash board, and add client 'ID' and client 'SECRET' to the `.env` variables below. For instructions, please click [here](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
 
 ```
 $ export SH_CLIENT_ID=xxxxxxxxxx
