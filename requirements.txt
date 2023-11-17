@@ -7,3 +7,4 @@ click
 sentinelhub
 python-dotenv
 Pillow
+google-cloud-storage
