@@ -25,3 +25,10 @@ $ gcloud services enable storage.googleapis.com # Cloud Storage API
 ```
 $ gcloud storage buckets create gs://BUCKET_NAME
 ```
+
+* Look at the `IAM` policy of the current project by running the below command, if the role of `storage.admin`, `storage.objectAdmin` and `storage.objectCreator` is not given to the service account you are using, go to the [IAM](https://console.cloud.google.com/iam-admin/iam?authuser=1&project=kinetic-hydro) page of your project, and grant the access to the appropriate service account and to your email ID.
+```
+$ gcloud projects get-iam-policy PROJECT_ID
+``` 
+
+That's it, you are all set!
