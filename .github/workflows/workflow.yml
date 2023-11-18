@@ -2,8 +2,8 @@ name: Pytest Workflow
 
 on:
   push:
-    paths:
-      - "tests/**"
+    branches:
+      - main
 
 jobs:
   pre-commit:
