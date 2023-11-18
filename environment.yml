@@ -17,3 +17,6 @@ dependencies:
     - python-dotenv
     - Pillow
     - google-cloud-storage
+    - matplotlib
+    - rasterio
+    - ipykernel
