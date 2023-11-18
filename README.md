@@ -27,7 +27,7 @@ $ sentinelhub.config --show
 ```
 $ export SH_CLIENT_ID=xxxxxxxxxx
 $ export SH_CLIENT_SECRET=xxxxxxxx
-``` 
+```
 
 ## Usage
 
@@ -35,7 +35,7 @@ Please click [here](docs/usage_instructions.md) to go the usage instructions.
 
 ## ✨ Thank you Open Cosmos for the challenge ✨
 
-Contributors of this work 👷 
+Contributors of this work 👷
 
 <table>
   <tbody>
@@ -44,4 +44,4 @@ Contributors of this work 👷
       <td align="center"><a href="https://github.com/vrym2"><img src="https://avatars.githubusercontent.com/u/93340339?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raj</b></sub></a><br /><a href="https://github.com/SpaceParkLeicester/Planet/commits?author=vrym2" title="Code">💻</a></td>
     </tr>
   </tbody>
-</table>     
+</table>

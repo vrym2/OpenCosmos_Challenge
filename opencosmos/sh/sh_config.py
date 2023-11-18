@@ -1,21 +1,22 @@
 """
-    Sentinel Hub configuration
+Sentinel Hub configuration
 """
 import os
+
 from sentinelhub import SHConfig
+
 
 class sentinelhub_config:
     """Sentinel Hub Configuration file"""
-    def __init__(
-            self,
-            log: isinstance= None) -> None:
+
+    def __init__(self, log: isinstance = None) -> None:
         """Defining variables
-        
+
         Args:\n
             log: custom logger ini file.
         """
         self.log = log
-    
+
     def save(self, instance_id: str = None):
         """Save the instance ID"""
         try:
@@ -36,7 +37,7 @@ class sentinelhub_config:
                 assert sh_client_secret is not None
             except AssertionError:
                 self.log.debug("Make sure to add an Instance ID")
-                self.log.debug(f"Make sure to add Sentinel OAuth IDs to the env variables")
+                self.log.debug("Make sure to add Sentinel OAuth IDs to the env variables")
             else:
                 self.config = SHConfig()
                 self.config.instance_id = instance_id
@@ -44,4 +45,3 @@ class sentinelhub_config:
                 self.config.sh_client_secret = sh_client_secret
                 self.config.save("open-cosmos-profile")
                 return self.config
-                

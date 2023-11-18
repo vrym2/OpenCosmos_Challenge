@@ -14,9 +14,9 @@ dependencies:
   - click
   - sentinelhub
   - pip:
-    - python-dotenv
-    - Pillow
-    - google-cloud-storage
-    - matplotlib
-    - rasterio
-    - ipykernel
+      - python-dotenv
+      - Pillow
+      - google-cloud-storage
+      - matplotlib
+      - rasterio
+      - ipykernel

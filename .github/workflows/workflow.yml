@@ -37,6 +37,6 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}
           COPERNICUS_USERNAME: ${{ secrets.COPERNICUS_USERNAME }}
-          COPERNICUS_PASSWORD: ${{ secrets.COPERNICUS_PASSWORD }}           
+          COPERNICUS_PASSWORD: ${{ secrets.COPERNICUS_PASSWORD }}
         run: |
           pytest tests/test_*.py

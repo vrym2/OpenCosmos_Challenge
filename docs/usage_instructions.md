@@ -7,7 +7,7 @@ Source: https://sentinelhub-py.readthedocs.io/en/latest/index.html
 Input arguments:
 
   - coords_wgs84:
-    - You can get required bounding box coordinates (WGS84) with [bbox finder](http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000) website. 
+    - You can get required bounding box coordinates (WGS84) with [bbox finder](http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000) website.
 
   - resolution:
     - Desired resolution (10m, 20m, 60m), if the given bounding box extends to multiple Kms, use lower resolutions (60m) to avoid errors.
@@ -32,7 +32,7 @@ Input arguments:
 
 Returns:
 
-  - `WEBP` formatted image, in `data/png` folder. 
+  - `WEBP` formatted image, in `data/png` folder.
 ```
 $ python opencosmos/utils/img_format.py
 ```
@@ -58,7 +58,7 @@ Input Arguments:
 
   - project_id:
     - project ID that has been set.
-  
+
   - local_filepath:
     - Relative path to the file that needs uploading.
 

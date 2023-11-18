@@ -1,26 +1,23 @@
 """
-    Copernicus data space access token
+Copernicus data space access token
 
-    Source: https://dataspace.copernicus.eu/
+Source: https://dataspace.copernicus.eu/
 """
 import os
-import json
+
 import requests
 from dotenv import load_dotenv
 
 # Loading environment variables
 load_dotenv()
 
+
 class copernicus_api:
     """Load the access token of Copernicus data space"""
 
-    def __init__(
-            self,
-            log: isinstance = None,
-            username: str = None,
-            password:str = None) -> None:
-        """Defining variables
-        
+    def __init__(self, log: isinstance = None, username: str = None, password: str = None) -> None:
+        r"""Defining variables
+
         Args:\n
             log: custom logger ini file
         """
@@ -47,15 +44,15 @@ class copernicus_api:
                 "username": self.username,
                 "password": self.password,
                 "grant_type": "password",
-                }
+            }
             try:
-                r = requests.post("https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token",
-                data=data,
+                r = requests.post(
+                    "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token",
+                    data=data,
                 )
                 r.raise_for_status()
-            except Exception as e:
+            except Exception:
                 raise Exception(
                     f"Access token creation failed. Response from the server was: {r.json()}"
-                    )
+                )
             return r.json()["access_token"]
-        

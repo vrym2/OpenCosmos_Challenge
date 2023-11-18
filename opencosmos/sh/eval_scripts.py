@@ -1,6 +1,7 @@
 """
-    Sentinel Hub Eval Scripts
+Sentinel Hub Eval Scripts
 """
+
 
 class sentinelhub_eval_scripts:
     """List of Sentinelhub eval scripts"""
@@ -42,7 +43,7 @@ class sentinelhub_eval_scripts:
             }
         return [3.5*sample.B04, 3.5*sample.B03, 3.5*sample.B02];
         }
-    """    
+    """
 
     # All bands
     all_bands = """
@@ -50,7 +51,7 @@ class sentinelhub_eval_scripts:
         function setup() {
             return {
                 input: [{
-                    bands: ["B01","B02","B03","B04","B05","B06","B07","B08","B8A","B09","B10","B11","B12"],
+                    bands: ["B01","B02","B03","B04","B05","B06","B07","B08","B8A","B09","B10","B11","B12"]
                     units: "DN"
                 }],
                 output: {
@@ -75,7 +76,7 @@ class sentinelhub_eval_scripts:
                     sample.B11,
                     sample.B12];
         }
-    """    
+    """  # noqa: E501
 
     # Digital Elevation Model
     dem = """
@@ -94,4 +95,4 @@ class sentinelhub_eval_scripts:
         function evaluatePixel(sample) {
             return [sample.DEM]
         }
-    """    
+    """
