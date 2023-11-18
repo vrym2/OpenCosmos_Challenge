@@ -2,6 +2,8 @@
 
 1. To download the a sentinel 2 true-color COG (Cloud Optimised GeoTIFF) data, run the following command. All the workflow scripts have CLI interface, so if you'd like to understand the input arguments, add the tag `--help` at the end of the command.
 
+Source: https://sentinelhub-py.readthedocs.io/en/latest/index.html
+
 Input arguments:
 
   - coords_wgs84:
