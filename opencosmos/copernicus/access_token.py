@@ -6,29 +6,20 @@ Source: https://dataspace.copernicus.eu/
 import os
 
 import requests
-from dotenv import load_dotenv
-
-# Loading environment variables
-load_dotenv()
 
 
 class copernicus_api:
     """Load the access token of Copernicus data space"""
 
-    def __init__(self, log: isinstance = None, username: str = None, password: str = None) -> None:
+    def __init__(self, log: isinstance = None) -> None:
         r"""Defining variables
 
         Args:\n
             log: custom logger ini file
         """
         self.log = log
-
-        if username and password is None:
-            self.username = os.environ["COPERNICUS_USERNAME"]
-            self.password = os.environ["COPERNICUS_PASSWORD"]
-        else:
-            self.username = username
-            self.password = password
+        self.username = os.environ["COPERNICUS_USERNAME"]
+        self.password = os.environ["COPERNICUS_PASSWORD"]
 
     def get_access_token(self) -> str:
         """Function to get the access token"""
