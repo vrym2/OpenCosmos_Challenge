@@ -11,3 +11,4 @@ google-cloud-storage
 matplotlib
 rasterio
 ipykernel
+pandas
