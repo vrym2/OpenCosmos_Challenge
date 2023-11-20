@@ -3,9 +3,10 @@ Image formatting
 """
 import logging
 import os
+import subprocess as sp
 from logging import config
 from pathlib import Path
-
+from opencosmos.utils import Loader
 import click
 from PIL import Image
 
@@ -42,6 +43,26 @@ class sentinel_image_webp:
 
         return destination
 
+    @staticmethod
+    def geotiff_to_png(geotiff_path)-> None:
+        r"""Convert GeoTiff file to a PNG
+        
+        Args:\n
+            geotiff_path: Path to a Geotiff file.
+        """
+        dir = os.path.dirname(os.path.realpath(geotiff_path))
+        file_name = os.path.basename(geotiff_path).split('.')[0]
+        output_file = os.path.join(dir, f'{file_name}.png')
+
+        loading = Loader("Converting Geotiff to PNG....", "Well, that was fast", 0.05).start()
+        sp.check_call(
+            f"gdal_translate -of PNG {geotiff_path} {output_file}",
+            shell=True,
+            stdout=sp.PIPE)
+        loading.stop()
+        return output_file
+
+    
     def png_to_webp(self, png_file: str = None):
         """Converting a PNG file to WEBP format"""
         try:
@@ -66,11 +87,12 @@ class sentinel_image_webp:
 
 
 @click.command()
-@click.option("--png_file", type=str, help="path to a PNG file")
-def main(png_file):
+@click.option("--geotiff_path", type=str, help="path to a GeoTiff file")
+def main(geotiff_path):
     """Preparing WEBP format files"""
-    src = sentinel_image_webp(log=logging)
-    src.png_to_webp(png_file=png_file)
+    sentinel = sentinel_image_webp(log=logging)
+    png_file = sentinel.geotiff_to_png(geotiff_path = geotiff_path)
+    sentinel.png_to_webp(png_file=png_file)
 
 
 if __name__ == "__main__":
