@@ -72,7 +72,7 @@ class sentinel_bands:
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
         file_path = os.path.join(output_folder, "Sentinel2_visual_process.tiff")
-        loading = Loader("Reading RDB bands into a single file....", "Well, that was fast", 0.05).start()
+        loading = Loader("Reading RGB bands into a single file....", "Well, that was fast", 0.05).start()
         with rio.open(
             file_path,'w',driver='Gtiff', 
             width=blue.width, height=blue.height, count=3, 
@@ -88,9 +88,12 @@ class sentinel_bands:
 @click.option("--safe_file_path", type = str, help = "Path to the Sentinel 2 SAFE product file")
 def main(safe_file_path):
     """Run the pipeline"""
-    bands = sentinel_bands(log = logging)
-    paths = bands.sentinel_file_paths(safe_file_path = safe_file_path)
-    bands.visual_bands(band_dict = paths)
+    try:
+        bands = sentinel_bands(log = logging)
+        paths = bands.sentinel_file_paths(safe_file_path = safe_file_path)
+        bands.visual_bands(band_dict = paths)
+    except TypeError:
+        logging.debug("Please add SAFE file path")
 
 if __name__ == "__main__":
     main()
