@@ -39,7 +39,7 @@ class copernicus_data_download(copernicus_api):
         """Begin downloading"""
 
         # Creating the download folder
-        download_folder = os.path.join("data", "sentinel2", "copernicus")
+        download_folder = os.path.join("data", "downloads")
         if not os.path.exists(download_folder):
             os.makedirs(download_folder)
         download = download_data_from_url(log = self.log, url_link = self.url, headers = self.headers)
