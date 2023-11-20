@@ -12,3 +12,4 @@ matplotlib
 rasterio
 ipykernel
 pandas
+rio-cogeo

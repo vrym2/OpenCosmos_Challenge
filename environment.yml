@@ -21,3 +21,4 @@ dependencies:
       - rasterio
       - ipykernel
       - pandas
+      - rio-cogeo
