@@ -13,3 +13,4 @@ rasterio
 ipykernel
 pandas
 rio-cogeo
+scikit-image
