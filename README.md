@@ -8,12 +8,21 @@ This repository consists of the scripts developed for the data engineering chall
 
 1. Make sure you have Google Cloud Storage API enabled for this Google Cloud project. Please click [here](docs/google_cloud.md) for the instructions.
 
-2. Install the `environment.yml` or `requirements.txt` in your virtual environment.
+2. Install `GDAL` on your machine.
+
+```
+$ sudo apt update
+$ sudo apt install libpq-dev gdal-bin libgdal-dev
+$ gdalinfo --version
+```
+
+3. Install the `environment.yml` or `requirements.txt` in your virtual environment.
 
 ```
 $ conda env create -f environment.yml # or
 $ source activate venv
 $ pip install -r requirements.txt
+$ pip install GDAL==$(gdalinfo --version)
 ```
 
 3. Run the below command to crate the `SentinelHub` configuration file.
