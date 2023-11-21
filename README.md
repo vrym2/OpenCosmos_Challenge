@@ -42,6 +42,14 @@ $ export SH_CLIENT_SECRET=xxxxxxxx
 
 Please click [here](docs/usage_instructions.md) to go the usage instructions.
 
+## Notes
+
+* Blocking issue  - [16Bit raster image](https://help.seequent.com/Oasismontaj/2023.1/Content/gxhelp/g/geosoft_gx_gridUtils_CopyConvertMultiGrids.htm)
+
+* [GDAL CLoud Optimised GeoTiff generator](https://gdal.org/drivers/raster/cog.html)
+
+* [8 and 12 bit JPEG in Tiff](https://trac.osgeo.org/gdal/wiki/TIFF12BitJPEG)
+
 ## ✨ Thank you Open Cosmos for the challenge ✨
 
 Contributors of this work 👷
