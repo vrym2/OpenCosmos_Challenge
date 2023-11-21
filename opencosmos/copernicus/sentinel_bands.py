@@ -71,7 +71,7 @@ class sentinel_bands:
         output_folder = os.path.join("data", "processed")
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
-        file_path = os.path.join(output_folder, "Sentinel2_visual_process.tiff")
+        file_path = os.path.join(output_folder, "Sentinel2_visual_processed.tiff")
         loading = Loader("Reading RGB bands into a single file....", "Well, that was fast", 0.05).start()
         with rio.open(
             file_path,'w',driver='Gtiff', 
