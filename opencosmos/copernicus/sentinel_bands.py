@@ -89,7 +89,7 @@ class sentinel_bands:
 def main(safe_file_path):
     """Sentinel 2 Visual Bands processing"""
     if safe_file_path is None:
-        safe_file_path = "data/downloads/S2A_MSIL1C_20220120T091311_N0301_R050_T35TLH_20220120T111422.SAFE"
+        safe_file_path = "data/downloads/Copernicus_Data_Ecosystem/S2A_MSIL1C_20220120T091311_N0301_R050_T35TLH_20220120T111422.SAFE"
 
     try:
         assert os.path.exists(safe_file_path) 
