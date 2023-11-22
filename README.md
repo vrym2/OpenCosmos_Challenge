@@ -29,9 +29,9 @@ $ pip install GDAL==$(gdalinfo --version)
 
 ## Usage
 
-Google Cloud - Please click [here](./docs/GooglCloud_Instructions.md) to go the project setup instructions.
-Copernicus Data Space Ecosystem - Please click [here](./docs/CopernicusData_Instructions.md) to go the usage instructions.
-SentinelHub - Please click [here](./docs/SentinelHub_Instructions.md) to go the usage instructions.
+* Google Cloud - Please click [here](./docs/GooglCloud_Instructions.md) to go the project setup instructions.
+* Copernicus Data Space Ecosystem - Please click [here](./docs/CopernicusData_Instructions.md) to go the usage instructions.
+* SentinelHub - Please click [here](./docs/SentinelHub_Instructions.md) to go the usage instructions.
 
 
 ## ✨ Thank you Open Cosmos for the challenge ✨
