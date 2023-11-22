@@ -8,7 +8,7 @@ This repository consists of the scripts developed for the data engineering chall
 
 ### Instructions
 
-1. Make sure you have Google Cloud Storage API enabled for this Google Cloud project. Please click [here](docs/google_cloud.md) for the instructions.
+1. Make sure you have Google Cloud Storage API enabled for this Google Cloud project. Please click [here](./docs/GooglCloud_Instructions.md) for the instructions.
 
 2. Install `GDAL` on your machine.
 
