@@ -23,3 +23,4 @@ dependencies:
       - pandas
       - rio-cogeo
       - scikit-image
+      - geopandas
