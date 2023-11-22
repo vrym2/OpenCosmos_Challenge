@@ -10,15 +10,19 @@ class sentinelhub_config:
     """Sentinel Hub Configuration file"""
 
     def __init__(self, log: isinstance = None) -> None:
-        """Defining variables
+        r"""Defining variables
 
         Args:\n
             log: custom logger ini file.
         """
         self.log = log
 
-    def save(self, instance_id: str = None):
-        """Save the instance ID"""
+    def save(self, instance_id: str = "open-cosmos"):
+        r"""Save the instance ID
+
+        Args:\n
+            instance_id: Provide an instance name
+        """
         try:
             home_folder = os.path.expanduser("~")
             config_file = os.path.join(home_folder, ".config/sentinelhub/config.toml")

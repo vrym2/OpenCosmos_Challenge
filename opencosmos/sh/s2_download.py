@@ -39,18 +39,10 @@ class sentinel2_image:
         mime_type = sentinel2_image.mime_type[download_file_type]
         if eval_script == "true_color":
             eval_script = sentinelhub_eval_scripts.true_color
-        elif eval_script == "cloud_mask":
-            eval_script == sentinelhub_eval_scripts.cloud_mask
-        elif eval_script == "all_bands":
-            eval_script == sentinelhub_eval_scripts.all_bands
-        elif eval_script == "dem":
-            eval_script == sentinelhub_eval_scripts.dem
-        else:
-            eval_script is None
         return mime_type, eval_script
 
     def __init__(self, log: isinstance = None, instance_id: str = "open-cosmos") -> None:
-        """Defining variables
+        r"""Defining variables
 
         Args:\n
             log: custom logger ini file.
@@ -61,7 +53,7 @@ class sentinel2_image:
         self.sh_config = sh.save(instance_id=instance_id)
 
     def aoi(self, coords_wgs84: Tuple = (46.16, -16.15, 46.51, -15.58), resolution: np.int16 = 10):
-        """Define an area of interest
+        r"""Define an area of interest
 
         Args:\n
             coords_wgs84: WGS84 bounding box coordinates (left, bottom, right, top)
@@ -84,7 +76,7 @@ class sentinel2_image:
         download_file_type: str = "png",
         eval_script: str = "true_color",
     ):
-        """Downloading True color mosaic
+        r"""Downloading True color mosaic
 
         Args:\n
             time_interval: self explanatory
@@ -102,7 +94,7 @@ class sentinel2_image:
         # Sanity check
         if not self.sh_config.sh_client_id or not self.sh_config.sh_client_secret:
             self.log.debug(
-                "Warning! To use Process API, please provide the credentials (OAuth client ID and client secret)."
+                "Warning! To use Process API, please provide the credentials (OAuth client ID and client secret)."  # noqa : E501
             )
         else:
             loading = Loader(
@@ -154,6 +146,7 @@ class sentinel2_image:
     help="Enter the time interval separated by a comma",
 )
 def main(coords_wgs84, time_interval, resolution):
+    """Function to download SentinelHub COGs"""
     coords = [float(x) for x in coords_wgs84.split(",")]
     interval = [interval for interval in time_interval.split(",")]
 

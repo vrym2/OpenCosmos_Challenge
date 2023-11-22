@@ -21,6 +21,8 @@ config.fileConfig("logger.ini")
 
 
 class cloud_optimised_geotiff:
+    """Convert GeoTiffs to COGs"""
+
     def __init__(self, log: isinstance = None) -> None:
         r"""Defining variables
 
@@ -170,6 +172,7 @@ class cloud_optimised_geotiff:
 @click.command()
 @click.option("--input_tiff_path", type=str, help="Path to the untilled GeoTiff file")
 def main(input_tiff_path):
+    """Function to get COGs from GeoTIFFs"""
     if input_tiff_path is None:
         input_tiff_path = "data/processed/Sentinel2_visual_processed.tiff"
     try:

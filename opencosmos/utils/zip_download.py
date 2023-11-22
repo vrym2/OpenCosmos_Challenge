@@ -11,8 +11,8 @@ from tqdm import tqdm
 class download_from_url:
     """Function to download from url
 
-    Source: https://stackoverflow.com/questions/37573483/progress-bar-while-download-file-over-http-with-requests # noqa : E501
-    """
+    Source: https://stackoverflow.com/questions/37573483/progress-bar-while-download-file-over-http-with-requests
+    """  # noqa : E501
 
     def __init__(self, log: isinstance = None, url_link: str = None, headers: Dict = None) -> None:
         """Defining variables

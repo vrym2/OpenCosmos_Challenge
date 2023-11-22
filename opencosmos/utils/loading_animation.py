@@ -8,9 +8,9 @@ from time import sleep
 class Loader:
     """Loading animation function
 
-    Source: https://stackoverflow.com/questions/22029562/python-how-to-make-simple-animated-loading-while-process-is-running # noqa: E501
+    Source: https://stackoverflow.com/questions/22029562/python-how-to-make-simple-animated-loading-while-process-is-running
     For the usage, check tests/test_animation.py
-    """
+    """  # noqa: E501
 
     def __init__(self, desc="Loading...", end="Done!", timeout=0.1):
         """
@@ -29,7 +29,7 @@ class Loader:
         self.steps = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
         self.done = False
 
-    def start(self):
+    def start(self):  # noqa : D102
         self._thread.start()
         return self
 
@@ -43,7 +43,7 @@ class Loader:
     def __enter__(self):
         self.start()
 
-    def stop(self):
+    def stop(self):  # noqa : D102
         self.done = True
         cols = get_terminal_size((80, 20)).columns
         print("\r" + " " * cols, end="", flush=True)

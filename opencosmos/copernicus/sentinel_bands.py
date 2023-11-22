@@ -29,6 +29,7 @@ class sentinel2_bands:
 
     @staticmethod
     def find_files(root_dir, extension):
+        """Find a file with certain extension"""
         for dirpath, _dirnames, filenames in os.walk(root_dir):
             for filename in filenames:
                 if filename.endswith(extension):
@@ -36,6 +37,7 @@ class sentinel2_bands:
 
     @staticmethod
     def contains_any(string_list, larger_string):
+        """Boolean if a string in list of strings"""
         for substring in string_list:
             if substring in larger_string:
                 return True
@@ -96,7 +98,7 @@ class sentinel2_bands:
 def main(safe_file_path):
     """Sentinel 2 Visual Bands processing"""
     if safe_file_path is None:
-        safe_file_path = "data/downloads/Copernicus_Data_Ecosystem/S2A_MSIL1C_20220120T091311_N0301_R050_T35TLH_20220120T111422.SAFE"
+        safe_file_path = "data/downloads/Copernicus_Data_Ecosystem/S2A_MSIL1C_20220120T091311_N0301_R050_T35TLH_20220120T111422.SAFE"  # noqa : E501
 
     try:
         assert os.path.exists(safe_file_path)

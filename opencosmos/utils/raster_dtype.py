@@ -1,3 +1,6 @@
+"""
+Convert data type of raster from Uint16 to Uint8
+"""
 import logging
 from logging import config
 
@@ -62,7 +65,7 @@ class raster_convert:
 @click.option("--input_tiff_path", type=str, help="A Geotiff file with data type unit16")
 @click.option("--output_tiff_path", type=str, help="An output tiff path")
 def main(input_tiff_path, output_tiff_path):
-    """Run the pipeline"""
+    """Function to convert raster data type from Uint16 to Uint8"""
     raster = raster_convert(log=logging)
     raster.dtype_to_uint8(input_tiff_path=input_tiff_path, output_tiff_path=output_tiff_path)
 

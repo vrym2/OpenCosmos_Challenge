@@ -20,7 +20,7 @@ class sentinel_image_webp:
     """Preparing WebP formats of sentinel data"""
 
     def __init__(self, log: isinstance = None) -> None:
-        """Defining variables
+        r"""Defining variables
 
         Args:\n
             log: custom logger ini file.
@@ -29,9 +29,9 @@ class sentinel_image_webp:
 
     @staticmethod
     def convert_to_webp(source):
-        """Convert image to WebP.
+        r"""Convert image to WebP.
 
-        Args:
+        Args\n:
             source (pathlib.Path): Path to source image
 
         Returns:
@@ -64,7 +64,11 @@ class sentinel_image_webp:
         return output_file
 
     def png_to_webp(self, png_file: str = None):
-        """Converting a PNG file to WEBP format"""
+        r"""Converting a PNG file to WEBP format
+
+        Args:\n
+            png_file: Path to a PNG file.
+        """
         try:
             png_file_path = Path(png_file)
             assert png_file_path.suffix == ".png"

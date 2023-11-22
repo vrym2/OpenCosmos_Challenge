@@ -43,8 +43,8 @@ class copernicus_api:
                 )
                 r.raise_for_status()
             except Exception:
-                raise Exception(
-                    f"Access token creation failed. Response from the server was: {r.json()}"
+                self.log.debug(
+                    f"Access token creation failed. Response from the server was: {r.json()}"  # noqa : E501
                 )
             return r.json()["access_token"]
 
