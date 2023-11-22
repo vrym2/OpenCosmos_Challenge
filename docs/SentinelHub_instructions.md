@@ -1,6 +1,20 @@
-### Instructions of Usage
+## [Sentinel Hub](../opencosmos/sh/)
 
-1. To download the a sentinel 2 true-color COG (Cloud Optimised GeoTIFF) data, run the following command. All the workflow scripts have CLI interface, so if you'd like to understand the input arguments, add the tag `--help` at the end of the command.
+###  Instructions of Usage
+1. Run the below command to crate the `SentinelHub` configuration file.
+
+```
+$ sentinelhub.config --show
+```
+
+2. If you have the [Sentinel Hub](https://apps.sentinel-hub.com/dashboard/#/) account, please create a new OAuth client in your user dash board, and add client 'ID' and client 'SECRET' to the `.env` variables below. For instructions, please click [here](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
+
+```
+$ export SH_CLIENT_ID=xxxxxxxxxx
+$ export SH_CLIENT_SECRET=xxxxxxxx
+```
+
+3. To download the a sentinel 2 true-color COG (Cloud Optimised GeoTIFF) data, run the following command. All the workflow scripts have CLI interface, so if you'd like to understand the input arguments, add the tag `--help` at the end of the command.
 
 Source: https://sentinelhub-py.readthedocs.io/en/latest/index.html
 
@@ -23,7 +37,7 @@ Returns:
 $ python opencosmos/sh/s2_download.py --help
 ```
 
-2. To get the overview of an image in `webp` format, with the size not greater than 500kb and shape 500 x 500 px, run the following command.
+4. To get the overview of an image in `webp` format, with the size not greater than 500kb and shape 500 x 500 px, run the following command.
 
 Input arguments:
 
@@ -37,7 +51,7 @@ Returns:
 $ python opencosmos/utils/img_format.py
 ```
 
-3. Perform Google Cloud Authentication.
+5. Perform Google Cloud Authentication.
 
 Input arguments:
 
@@ -52,7 +66,7 @@ Returns:
 $ python opencosmos/gcp/gcloud_auth.py
 ```
 
-4. Upload files to the Google Cloud Storage.
+6. Upload files to the Google Cloud Storage.
 
 Input Arguments:
 
