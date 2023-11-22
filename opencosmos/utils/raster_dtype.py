@@ -1,19 +1,23 @@
-import click
-from osgeo import gdal
-import numpy as np
-from skimage import exposure
-from PIL import Image
-from opencosmos.utils import Loader
 import logging
 from logging import config
+
+import click
+import numpy as np
+from osgeo import gdal
+from PIL import Image
+from skimage import exposure
+
+from opencosmos.utils import Loader
+
 config.fileConfig("logger.ini")
+
 
 class raster_convert:
     """Convert raster data type"""
 
     def __init__(self, log: isinstance = None) -> None:
         r"""Defining variables
-        
+
         Args:\n
             log: custom logger ini file.
         """
@@ -21,10 +25,10 @@ class raster_convert:
 
     def dtype_to_uint8(self, input_tiff_path, output_tiff_path):
         r"""Convert he dtype from unit16 ro uint8
-        
+
         Args:\n
             input_tiff_path: An input tiff with dtype of unit16
-            output_tiff_path: Path to an output tiff file. 
+            output_tiff_path: Path to an output tiff file.
         """
         # Load the GeoTIFF raster
         loading = Loader("Converting the data type of raster...", "That was fast", 0.05).start()
@@ -32,11 +36,15 @@ class raster_convert:
         raster_data_uint16 = dataset.GetRasterBand(1).ReadAsArray()
 
         # Perform the conversion from uint16 to uint8
-        raster_data_uint8 = exposure.rescale_intensity(raster_data_uint16, in_range='uint16', out_range='uint8').astype(np.uint8)
+        raster_data_uint8 = exposure.rescale_intensity(
+            raster_data_uint16, in_range="uint16", out_range="uint8"
+        ).astype(np.uint8)
 
         # Create a new GeoTIFF file for the uint8 data
-        driver = gdal.GetDriverByName('GTiff')
-        output_dataset = driver.Create(output_tiff_path, dataset.RasterXSize, dataset.RasterYSize, 1, gdal.GDT_Byte)
+        driver = gdal.GetDriverByName("GTiff")
+        output_dataset = driver.Create(
+            output_tiff_path, dataset.RasterXSize, dataset.RasterYSize, 1, gdal.GDT_Byte
+        )
 
         # Copy the spatial information from the original dataset
         output_dataset.SetGeoTransform(dataset.GetGeoTransform())
@@ -49,15 +57,15 @@ class raster_convert:
         loading.stop()
         self.log.info(f"Find the converted raster file here: {output_tiff_path}")
 
+
 @click.command()
-@click.option("--input_tiff_path", type = str, help = "A Geotiff file with data type unit16")
-@click.option("--output_tiff_path", type = str, help = "An output tiff path")
+@click.option("--input_tiff_path", type=str, help="A Geotiff file with data type unit16")
+@click.option("--output_tiff_path", type=str, help="An output tiff path")
 def main(input_tiff_path, output_tiff_path):
     """Run the pipeline"""
-    raster = raster_convert(log = logging)
-    raster.dtype_to_uint8(
-        input_tiff_path = input_tiff_path,
-        output_tiff_path = output_tiff_path)
+    raster = raster_convert(log=logging)
+    raster.dtype_to_uint8(input_tiff_path=input_tiff_path, output_tiff_path=output_tiff_path)
+
 
 if __name__ == "__main__":
     main()

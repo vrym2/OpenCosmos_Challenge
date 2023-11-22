@@ -72,11 +72,7 @@ class download_from_url:
 class download_data_from_url(download_from_url):
     """Download zip files"""
 
-    def __init__(
-            self, 
-            log: isinstance = None, 
-            url_link: str = None,
-            headers: Dict = None ) -> None:
+    def __init__(self, log: isinstance = None, url_link: str = None, headers: Dict = None) -> None:
         r"""Defining variables
 
         Args:\n
