@@ -127,7 +127,7 @@ class cloud_optimised_geotiff:
             count=nbands,
             height=height,
             width=width,
-            crs="epsg:4326",
+            crs=tiff.crs,
             transform=src_transform)
         
         # Convert to COG

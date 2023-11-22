@@ -10,7 +10,7 @@ import logging
 from logging import config
 config.fileConfig("logger.ini")
 
-class sentinel_bands:
+class sentinel2_bands:
     """Read Sentinel 2 bands"""
 
     band_types = {
@@ -52,10 +52,10 @@ class sentinel_bands:
             band_type: Type of the band as defined above.
         """
         self.band_files = dict()
-        file_list = sentinel_bands.find_files(safe_file_path, ".jp2")
+        file_list = sentinel2_bands.find_files(safe_file_path, ".jp2")
         for file in file_list:
             file_name = os.path.basename(file).split('.')[0]
-            status = sentinel_bands.contains_any(sentinel_bands.band_types[band_type], file_name)
+            status = sentinel2_bands.contains_any(sentinel2_bands.band_types[band_type], file_name)
             if status == True:
                 band = file_name.split('_')[-1]
                 self.band_files[band] = file
@@ -93,7 +93,7 @@ def main(safe_file_path):
 
     try:
         assert os.path.exists(safe_file_path) 
-        bands = sentinel_bands(log = logging)
+        bands = sentinel2_bands(log = logging)
         paths = bands.sentinel_file_paths(safe_file_path = safe_file_path)
         bands.visual_bands(band_dict = paths)
     except AssertionError:
