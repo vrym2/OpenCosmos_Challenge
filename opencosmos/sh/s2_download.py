@@ -95,7 +95,7 @@ class sentinel2_image:
         mime_type, eval_script = self.sh_request_config(download_file_type, eval_script)
 
         # Create the folder to download
-        download_folder = os.path.join("data", f"{download_file_type}")
+        download_folder = os.path.join("data", "downloads", "SentinelHub", f"{download_file_type}")
         if not os.path.exists(download_folder):
             os.makedirs(download_folder)
 
