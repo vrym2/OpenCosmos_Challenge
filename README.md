@@ -6,6 +6,8 @@ Aim High, Go Beyond! 🌍
 ## Data Engineering Challenge
 This repository consists of the scripts developed for the data engineering challenge presented by Open Cosmos Ltd.
 
+Please go to [notebooks/challenge.ipynb](./notebooks/challenge.ipynb) and run the notebook to see the technical objectives carried out in the project.
+
 ### Instructions
 
 1. Make sure you have Google Cloud Storage API enabled for this Google Cloud project. Please click [here](./docs/GooglCloud_Instructions.md) for the instructions.
