@@ -63,10 +63,10 @@ class sentinel_bands:
     
     def visual_bands(self, band_dict: Dict = None)-> None:
         """Read visual bands into a single file"""
-        blue = rio.open(band_dict["B02"])
-        green = rio.open(band_dict["B03"])
-        red = rio.open(band_dict["B04"])
-
+        blue = rio.open(band_dict["B02"], driver='JP2OpenJPEG')
+        green = rio.open(band_dict["B03"], driver='JP2OpenJPEG')
+        red = rio.open(band_dict["B04"], driver='JP2OpenJPEG')
+        
         # Output folder
         output_folder = os.path.join("data", "processed")
         if not os.path.exists(output_folder):
