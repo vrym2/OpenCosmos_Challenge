@@ -34,8 +34,8 @@ $ pip install GDAL==$(gdalinfo --version)
 * SentinelHub - Please click [here](./docs/SentinelHub_Instructions.md) to go the usage instructions.
 
 ## Project File structure
-```
 
+```
 opencosmos/
 ├── copernicus
 │   ├── __init__.py
