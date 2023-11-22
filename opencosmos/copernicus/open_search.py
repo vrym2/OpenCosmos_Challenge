@@ -12,9 +12,6 @@ config.fileConfig("logger.ini")
 class copernicus_api_search:
     """Copernicus data space search"""
 
-    json = requests.get("https://catalogue.dataspace.copernicus.eu/resto/api/collections/Sentinel2/search.json?productType=S2MSI1C&cloudCover=[0,10]&startDate=2022-06-11T00:00:00Z&completionDate=2022-06-22T23:59:59Z&maxRecords=10&box=4,51,4.5,52").json()
-
-
     def __init__(
             self,
             log: isinstance = None) -> None:
@@ -128,7 +125,7 @@ class copernicus_api_search:
 @click.option("--max_records", type = np.int16, default = 10, help = "Maximum records filtered")
 @click.option("--bbox_str", type = str, default = "24.5,42.5,25,43", help = "BBox coordinates in a string format")
 def main(max_cloud_percentage, search_start_date, search_end_date, max_records, bbox_str):
-    """Running the main pipeline"""
+    """Script to search Sentinel 2 data"""
 
     # Getting the URL
     api = copernicus_api_search(log = logging)
