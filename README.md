@@ -2,6 +2,7 @@
 Aim High, Go Beyond! 🌍
 
 ⚠️Warning: Repository is under construction🚧, so please be advised.
+
 ## Data Engineering Challenge
 This repository consists of the scripts developed for the data engineering challenge presented by Open Cosmos Ltd.
 
@@ -26,30 +27,12 @@ $ pip install -r requirements.txt
 $ pip install GDAL==$(gdalinfo --version)
 ```
 
-3. Run the below command to crate the `SentinelHub` configuration file.
-
-```
-$ sentinelhub.config --show
-```
-
-4. If you have the [Sentinel Hub](https://apps.sentinel-hub.com/dashboard/#/) account, please create a new OAuth client in your user dash board, and add client 'ID' and client 'SECRET' to the `.env` variables below. For instructions, please click [here](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
-
-```
-$ export SH_CLIENT_ID=xxxxxxxxxx
-$ export SH_CLIENT_SECRET=xxxxxxxx
-```
-
 ## Usage
 
-Please click [here](docs/usage_instructions.md) to go the usage instructions.
+Google Cloud - Please click [here](./docs/GooglCloud_Instructions.md) to go the project setup instructions.
+Copernicus Data Space Ecosystem - Please click [here](./docs/CopernicusData_Instructions.md) to go the usage instructions.
+SentinelHub - Please click [here](./docs/SentinelHub_Instructions.md) to go the usage instructions.
 
-## Notes
-
-* Blocking issue  - [16Bit raster image](https://help.seequent.com/Oasismontaj/2023.1/Content/gxhelp/g/geosoft_gx_gridUtils_CopyConvertMultiGrids.htm)
-
-* [GDAL CLoud Optimised GeoTiff generator](https://gdal.org/drivers/raster/cog.html)
-
-* [8 and 12 bit JPEG in Tiff](https://trac.osgeo.org/gdal/wiki/TIFF12BitJPEG)
 
 ## ✨ Thank you Open Cosmos for the challenge ✨
 
