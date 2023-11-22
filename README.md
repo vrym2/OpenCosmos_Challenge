@@ -33,6 +33,35 @@ $ pip install GDAL==$(gdalinfo --version)
 * Copernicus Data Space Ecosystem - Please click [here](./docs/CopernicusData_Instructions.md) to go the usage instructions.
 * SentinelHub - Please click [here](./docs/SentinelHub_Instructions.md) to go the usage instructions.
 
+## Project File structure
+```
+
+opencosmos/
+├── copernicus
+│   ├── __init__.py
+│   ├── access_token.py
+│   ├── cog.py
+│   ├── open_search.py
+│   ├── product_download.py
+│   ├── sentinel_bands.py
+│   └── upload.py
+├── gcp
+│   ├── __init__.py
+│   ├── gcloud_auth.py
+│   └── gcloud_upload.py
+├── sh
+│   ├── __init__.py
+│   ├── eval_scripts.py
+│   ├── s2_download.py
+│   └── sh_config.py
+└── utils
+    ├── __init__.py
+    ├── img_format.py
+    ├── loading_animation.py
+    ├── plot.py
+    ├── raster_dtype.py
+    └── zip_download.py
+```
 
 ## ✨ Thank you Open Cosmos for the challenge ✨
 
