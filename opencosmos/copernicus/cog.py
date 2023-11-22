@@ -162,9 +162,16 @@ class cloud_optimised_geotiff:
 @click.command()
 @click.option("--input_tiff_path", type = str, help = "Path to the untilled GeoTiff file")
 def main(input_tiff_path):
-    sentinel_data = cloud_optimised_geotiff(log = logging)
-    cog_tiff = sentinel_data.cog_convert(input_tiff_path = input_tiff_path)
-    metadata = sentinel_data.cog_metadata(cog_tiff_path=cog_tiff)
+    if input_tiff_path is None:
+        input_tiff_path = "data/processed/Sentinel2_visual_processed.tiff"
+    try:
+        assert os.path.exists(input_tiff_path)
+    except AssertionError:
+        logging.debug("Please provide credible TIFF path")
+    else:
+        sentinel_data = cloud_optimised_geotiff(log = logging)
+        cog_tiff = sentinel_data.cog_convert(input_tiff_path = input_tiff_path)
+        metadata = sentinel_data.cog_metadata(cog_tiff_path=cog_tiff)
 
 if __name__ == "__main__":
     main()
