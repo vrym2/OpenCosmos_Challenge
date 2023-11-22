@@ -1,6 +1,7 @@
 # [Open Cosmos](https://www.open-cosmos.com/) <img src="./assets/logos/open_cosmos_logo.png" width="30" height="30">
 Aim High, Go Beyond! 🌍
 
+⚠️Warning: Repository is under construction🚧, so please be advised.
 ## Data Engineering Challenge
 This repository consists of the scripts developed for the data engineering challenge presented by Open Cosmos Ltd.
 
