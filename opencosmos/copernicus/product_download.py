@@ -48,7 +48,7 @@ class copernicus_data_download(copernicus_api):
 @click.command()
 @click.option("--product_id", type = str, default = "42f56c90-9613-5271-9e28-44a968e11c7d", help = "Sentinel2 product ID")
 def main(product_id):
-    """Run the pipeline"""
+    """Function to download Sentinel 2 product"""
     download = copernicus_data_download(log = logging, product_id = product_id)
     download.commence()
 
