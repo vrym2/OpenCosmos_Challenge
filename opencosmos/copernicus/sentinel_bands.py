@@ -87,12 +87,16 @@ class sentinel_bands:
 @click.command()
 @click.option("--safe_file_path", type = str, help = "Path to the Sentinel 2 SAFE product file")
 def main(safe_file_path):
-    """Run the pipeline"""
+    """Sentinel 2 Visual Bands processing"""
+    if safe_file_path is None:
+        safe_file_path = "data/downloads/S2A_MSIL1C_20220120T091311_N0301_R050_T35TLH_20220120T111422.SAFE"
+
     try:
+        assert os.path.exists(safe_file_path) 
         bands = sentinel_bands(log = logging)
         paths = bands.sentinel_file_paths(safe_file_path = safe_file_path)
         bands.visual_bands(band_dict = paths)
-    except TypeError:
+    except AssertionError:
         logging.debug("Please add SAFE file path")
 
 if __name__ == "__main__":
