@@ -29,6 +29,17 @@ $ pip install -r requirements.txt
 $ pip install GDAL==$(gdalinfo --version)
 ```
 
+4. If not, please add the repository to the `PYTHONPATH` in `.bash` profile.
+
+```
+#.bashrc
+OPENCOSMOS_CHALLENGE=<path/to/opencosmos_repo>
+if [[ ":PYTHONPATH:" != $OPENCOSMOS_CHALLENGE ]]; then
+    echo "Adding $OPENCOSMOS_CHALLENGE to the PYTHONPATH"
+    export PYTHONPATH="$OPENCOSMOS_CHALLENGE:$PYTHONPATH"
+fi
+```
+
 ## Usage
 
 * Google Cloud - Please click [here](./docs/GooglCloud_Instructions.md) to go the project setup instructions.
