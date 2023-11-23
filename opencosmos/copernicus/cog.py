@@ -119,7 +119,7 @@ class cloud_optimised_geotiff:
         output_cog_tiff = os.path.join(output_folder, f"{output_cog_tiff}_cog.tiff")
 
         # Read Geotiff data
-        tiff = rio.open(input_tiff_path, mode = "r")
+        tiff = rio.open(input_tiff_path, mode="r")
         bounds = tiff.bounds
         width = tiff.width
         height = tiff.height
