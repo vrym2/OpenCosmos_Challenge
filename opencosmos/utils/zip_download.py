@@ -113,16 +113,14 @@ class download_data_from_url(download_from_url):
 
         file_path = os.path.join(download_path, f"{file_name}.zip")
 
-        if len(os.listdir(download_path)) == 0:
-            self.log.info(f"{download_path} appears to be empty!")
-            if self.is_downloadable(self.url_link):
-                # Downloading
-                super().commence(file_path)
-                time.sleep(10)
+        self.log.info(f"{download_path} appears to be empty!")
+        if self.is_downloadable(self.url_link):
+            # Downloading
+            super().commence(file_path)
+            time.sleep(10)
 
-                # Extracting
-                super().extract_data(file_path, download_path)
-            else:
-                self.log.debug("URL link is not downloadable")
+            # Extracting
+            super().extract_data(file_path, download_path)
         else:
-            self.log.info(f"{file_name} already exists in {download_path}")
+            self.log.debug("URL link is not downloadable")
+
